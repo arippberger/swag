@@ -15,10 +15,11 @@ export default function MainContent(props) {
   const tags = props.files.reduce((previousValue, currentValue) => {
     const newTags = currentValue.tags.map((tag) => !previousValue.includes(tag) ? tag : null).filter((tag) => tag);
     return previousValue.concat(newTags);
-  }, ['all']);
+  }, ['all', 'favorites']);
 
   useEffect(() => {
-    let filteredFiles = props.files.filter((file) => file.tags.includes(currentTag));
+    let filteredFiles = props.files.map((file) => favorites.includes(file.id) ? {...file, tags: [...tags, 'favorites']} : {...file, tags: file.tags.filter((tag) => tag !== 'favorites')} );
+    filteredFiles = filteredFiles.filter((file) => file.tags.includes(currentTag));
     if (props.searchTerm) {
       filteredFiles = filteredFiles.filter((file) => file.name.includes(props.searchTerm));
     }

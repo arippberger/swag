@@ -11,19 +11,18 @@ import MainContent from "../components/MainContent";
 import tshirts from "../content/tshirts";
 import {navigation, tabs} from "../content/nav";
 
-const currentFile = {
-  name: 'IMG_4985.HEIC',
-  size: '3.9 MB',
-  source:
-    'https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80',
+const currentFile =   {
+  id: 1,
+  name: 'A&D',
+  year: '2016',
+  source: '/images/IMG_0403.JPEG',
+  current: false,
+  description: 'I started work at Ackmann & Dickenson in 2016.',
+  tags: ['all', 'workplace', 'tech'],
   information: {
-    'Uploaded by': 'Marie Culver',
-    Created: 'June 8, 2020',
-    'Last modified': 'June 8, 2020',
-    Dimensions: '4032 x 3024',
-    Resolution: '72 x 72',
+    test: 'some text',
   },
-}
+};
 
 const NarrowSidebar = dynamic(() => import('../components/NarrowSidebar'));
 const MobileMenu = dynamic(() => import('../components/MobileMenu'));
@@ -33,16 +32,16 @@ export default function Home() {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <div className="container">
+    <div className="container h-full">
       <Head>
-        <title>Swag: T-shirt Gallery</title>
+        <title>Home | Swag: T-shirt Gallery</title>
         <link rel="icon" href="/favicon.ico"/>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap&text=swag" rel="stylesheet" />
       </Head>
 
-      <main>
+      <main className="h-full">
         <>
           <div className="h-full flex">
             {/* Narrow sidebar */}

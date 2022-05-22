@@ -1,7 +1,7 @@
 import {CogIcon, HomeIcon, ViewGridIcon as ViewGridIconOutline} from "@heroicons/react/outline";
 
 const navigation = [
-  {name: 'About', href: '#', icon: CogIcon, current: false},
+  {name: 'About', href: '/about', icon: CogIcon, current: false},
 ]
 
 const tabs = [
