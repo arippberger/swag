@@ -49,7 +49,8 @@ export default function Details(props) {
         <div>
           <h3 className="font-medium text-gray-900">Description</h3>
           <div className="mt-2 flex items-center justify-between">
-            <p className="text-sm text-gray-500">{props.currentFile.description}</p>
+            {/* It's OK - all data is imported from a file*/}
+            <p className="text-sm text-gray-500" dangerouslySetInnerHTML={{__html: props.currentFile.description}}/>
           </div>
         </div>
         }
